@@ -13,7 +13,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="flex flex-col h-screen">
       <Navbar />
-      <main className="flex-grow overflow-auto">
+      <main className="flex-grow overflow-hidden">
         <HeroSection userType="freelancer" />
         <CategoriesSection />
         <FeaturedJobs />
