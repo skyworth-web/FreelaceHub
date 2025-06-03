@@ -11,9 +11,9 @@ import CTASection from '../components/home/CTASection';
 
 const HomePage: React.FC = () => {
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen overflow-hidden">
       <Navbar />
-      <main className="flex-grow overflow-hidden">
+      <main className="flex-grow">
         <HeroSection userType="freelancer" />
         <CategoriesSection />
         <FeaturedJobs />
