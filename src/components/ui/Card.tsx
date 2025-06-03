@@ -16,8 +16,14 @@ const Card: React.FC<CardProps> = ({
   return (
     <div
       className={cn(
-        'bg-white rounded-lg shadow-sm border border-gray-200',
-        hoverEffect && 'transition-all duration-300 hover:shadow-md',
+        'bg-white rounded-lg border border-gray-200',
+        hoverEffect && [
+          'transition-all duration-300',
+          'hover:shadow-lg hover:-translate-y-1',
+          'hover:border-blue-100',
+          'transform perspective-1000',
+          'hover:z-10'
+        ],
         className
       )}
       {...props}
@@ -39,7 +45,11 @@ const CardHeader: React.FC<CardHeaderProps> = ({
 }) => {
   return (
     <div
-      className={cn('px-6 py-4 border-b border-gray-200', className)}
+      className={cn(
+        'px-6 py-4 border-b border-gray-200',
+        'bg-gradient-to-r from-gray-50 to-white',
+        className
+      )}
       {...props}
     >
       {children}
@@ -58,7 +68,14 @@ const CardContent: React.FC<CardContentProps> = ({
   ...props
 }) => {
   return (
-    <div className={cn('px-6 py-4', className)} {...props}>
+    <div 
+      className={cn(
+        'px-6 py-4',
+        'group-hover:bg-gradient-to-b from-transparent to-gray-50',
+        className
+      )} 
+      {...props}
+    >
       {children}
     </div>
   );
@@ -76,7 +93,11 @@ const CardFooter: React.FC<CardFooterProps> = ({
 }) => {
   return (
     <div
-      className={cn('px-6 py-4 border-t border-gray-200', className)}
+      className={cn(
+        'px-6 py-4 border-t border-gray-200',
+        'bg-gradient-to-b from-gray-50 to-transparent',
+        className
+      )}
       {...props}
     >
       {children}
